@@ -35,3 +35,28 @@ CREATE TABLE users_languages (
     FOREIGN KEY (language_id) REFERENCES languages (language_id),
     UNIQUE (user_id, language_id)
 );
+
+
+INSERT INTO dni (dni_number, user_id) 
+VALUES 
+	(11111111, 2),
+    (33333333, 3);|
+
+
+INSERT INTO companies (name) 
+VALUES 
+	('Google'), 
+    ('Samsung'),
+    ('BMW');
+
+UPDATE users SET company_id=1 WHERE user_id IN (1,7);
+UPDATE users SET company_id=2 WHERE user_id=3;
+UPDATE users SET company_id=3 WHERE user_id=4;
+
+INSERT INTO users_languages (user_id, language_id)
+VALUES 
+	(1, 1), 
+    (1, 2), 
+    (1, 5), 
+    (2, 3),
+    (2, 5)
